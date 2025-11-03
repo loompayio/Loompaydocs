@@ -1,0 +1,1094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The smarter way to spend your crypto on multi-chains">
+      
+      
+      
+        <link rel="canonical" href="https://<loompayio>.github.io/loompay-docs/secured-credit-card/">
+      
+      
+        <link rel="prev" href="../wallet-functionality/">
+      
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Card System - Loompay Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-issuance-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Loompay Docs" class="md-header__button md-logo" aria-label="Loompay Docs" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Loompay Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Card System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../product-intro/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../competitive-advantages/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Competitive Advantages
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wallet-functionality/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../technical-architecture.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Card System
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../staking-liquidity.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Staking & Liquidity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cashback-rewards.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cashback Rewards
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../referral-program.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Referral Program
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../legal-compliance.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Legal & Compliance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources-faq.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources & FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Loompay Docs" class="md-nav__button md-logo" aria-label="Loompay Docs" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Loompay Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competitive-advantages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Competitive Advantages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet-functionality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-architecture.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Card System
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Card System
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-issuance-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Issuance Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Card Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-virtual-physical-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Virtual &amp; Physical Card
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kyc-know-your-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. KYC (Know Your Customer)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fees-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Fees &amp; Limits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Thresholds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-spending-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Spending &amp; Transactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-security-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Security &amp; Compliance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-highlights-of-loompay-secured-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Key Highlights of Loompay Secured Card
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../staking-liquidity.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Staking & Liquidity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cashback-rewards.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cashback Rewards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referral-program.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referral Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legal-compliance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legal & Compliance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources-faq.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resources & FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Card System</h1>
+
+<p>Loompay offers secured credit cards that let you spend crypto as fiat. All cards are denominated in USD.</p>
+<p><strong>How to issue a card:</strong></p>
+<p>The Loompay Secured Card is issued seamlessly through the <strong>Loompay.io platform</strong> with a fully automated, on-chain system.</p>
+<p>Upon sign-up or wallet connection, each user receives a <strong>pre-issued card and wallet</strong>—ready to activate in seconds.</p>
+<h3 id="1-issuance-flow"><strong>1. Issuance Flow</strong><a class="headerlink" href="#1-issuance-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The user signs in via <strong>wallet</strong> or <strong>email</strong>.</li>
+<li>Upon login, <strong>Loompay automatically creates a secure wallet</strong> and a <strong>pre-issued card profile</strong> for the user.</li>
+<li>The virtual card is <strong>automatically activated</strong> with an initial <strong>monthly spending limit of $2,000</strong>.</li>
+<li>After successful <strong>KYC verification</strong>, the card’s <strong>spending limits are instantly upgraded</strong>, enabling full global usage.</li>
+</ol>
+<hr />
+<h3 id="card-types"><strong>Card Types</strong><a class="headerlink" href="#card-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Virtual Card:</strong> Instantly issued and activated after login. It can be used for <strong>online payments</strong> or added to <strong>mobile wallets</strong> for contactless transactions.</li>
+<li><strong>Physical Card:</strong> Available <strong>after KYC verification</strong> and shipped within <strong>5–10 business days</strong>. Ideal for <strong>in-store purchases</strong> and <strong>ATM withdrawals</strong>.</li>
+</ul>
+<h2 id="2-virtual-physical-card"><strong>2. Virtual &amp; Physical Card</strong><a class="headerlink" href="#2-virtual-physical-card" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Virtual Card</th>
+<th>Physical Card</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Availability</strong></td>
+<td>Instant after KYC</td>
+<td>Delivered within 5–10 business days</td>
+</tr>
+<tr>
+<td><strong>Usage</strong></td>
+<td>Online, e-commerce, subscriptions</td>
+<td>In-store, ATM, and global POS</td>
+</tr>
+<tr>
+<td><strong>Wallet Integration</strong></td>
+<td>Loompay App, Apple Pay, Google Pay</td>
+<td>NFC &amp; EMV chip-enabled</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Dynamic CVV, 2FA, encrypted card info</td>
+<td>3D Secure, PIN protection</td>
+</tr>
+<tr>
+<td><strong>Management</strong></td>
+<td>Lock/unlock instantly via app</td>
+<td>Reissue options via dashboard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Competitive Advantages:</strong></p>
+<ul>
+<li>Fully tokenized card data—zero risk of card detail leakage.</li>
+<li>Unified experience across Web2 and Web3 transactions.</li>
+<li>Works seamlessly with both fiat and crypto assets.</li>
+</ul>
+<hr />
+<h2 id="3-kyc-know-your-customer"><strong>3. KYC (Know Your Customer)</strong><a class="headerlink" href="#3-kyc-know-your-customer" title="Permanent link">&para;</a></h2>
+<p>Loompay uses a <strong>tiered verification system</strong> that maintains compliance while optimizing the user experience.</p>
+<p>KYC is only triggered when users choose to <strong>activate their Physical Card</strong> or upgrade <strong>their spending limits</strong>, ensuring a seamless and low-friction onboarding experience.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Verification Requirement</th>
+<th>Daily Limit</th>
+<th>Features Unlocked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 0 (Pre-Issued)</strong></td>
+<td>Email + Wallet login</td>
+<td>$2,000/month</td>
+<td>Pre-issued card, USDT or crypto deposit. Activate virtual card, fiat transactions.</td>
+</tr>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>ID (National/Passport). Advanced (Address Proof + Selfie)</td>
+<td>$10,000 - Unlimited/day</td>
+<td>Physical card, ATM withdrawals, staking</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>AI-based verification with under 60-second approval.</li>
+<li>ISO/IEC 27001 certified identity provider.</li>
+<li>Automatic tier transitions as user activity grows.</li>
+</ul>
+<hr />
+<h2 id="4-fees-limits"><strong>4. Fees &amp; Limits</strong><a class="headerlink" href="#4-fees-limits" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fee Type</th>
+<th>Amount</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Virtual Card Issuance</strong></td>
+<td>Free</td>
+<td>Instant after Log in completion</td>
+</tr>
+<tr>
+<td><strong>Physical Card Issuance</strong></td>
+<td>$9.99</td>
+<td>Includes global shipping</td>
+</tr>
+<tr>
+<td><strong>Crypto Deposit / Top-Up</strong></td>
+<td>0% (First 3 months)</td>
+<td>Promotional rate for new users</td>
+</tr>
+<tr>
+<td><strong>FX Conversion Fee</strong></td>
+<td>0%</td>
+<td>Real-time exchange with zero markup</td>
+</tr>
+<tr>
+<td><strong>Perpetual Cashback</strong></td>
+<td>1%</td>
+<td>On eligible transactions</td>
+</tr>
+<tr>
+<td><strong>Account Maintenance</strong></td>
+<td>$0</td>
+<td>No hidden or recurring fees</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>Transparent, competitive pricing—up to <strong>70% cheaper</strong> than competitors.</li>
+<li>Free top-ups and staking yield integration.</li>
+<li>FX conversion optimized via Loompay's multi-asset liquidity engine.</li>
+</ul>
+<hr />
+<h2 id="5-thresholds"><strong>5. Thresholds</strong><a class="headerlink" href="#5-thresholds" title="Permanent link">&para;</a></h2>
+<p>Loompay provides <strong>adaptive transaction thresholds</strong> based on user type and collateral level, offering flexibility for individuals and Web3 businesses alike.</p>
+<table>
+<thead>
+<tr>
+<th>User Type</th>
+<th>Daily Spending Limit</th>
+<th>Card Limit</th>
+<th>Limit Upgrade Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard User</strong></td>
+<td>$100 – $500</td>
+<td>$2000/month</td>
+<td>Enhanced KYC verification</td>
+</tr>
+<tr>
+<td>Verified User</td>
+<td>$10,000 – $100,000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Businesses</strong></td>
+<td>Custom</td>
+<td>Unlimited</td>
+<td>Enterprise agreement</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Smart Controls:</strong></p>
+<ul>
+<li>Dynamic risk management powered by on-chain metrics.</li>
+<li>Real-time spending analytics with Web3 credit profiling.</li>
+<li>Automatic alerts for limit upgrades and KYC prompts.</li>
+</ul>
+<hr />
+<h2 id="6-spending-transactions"><strong>6. Spending &amp; Transactions</strong><a class="headerlink" href="#6-spending-transactions" title="Permanent link">&para;</a></h2>
+<p>Once activated, users can spend crypto effortlessly at any <strong>Visa/Mastercard merchant worldwide</strong>.</p>
+<p>Loompay automatically converts digital assets to fiat at the moment of transaction—no manual steps required.</p>
+<p><strong>Supported Activities:</strong></p>
+<ul>
+<li>Online purchases, subscriptions, and e-commerce payments.</li>
+<li>In-store POS and global ATM withdrawals.</li>
+<li>Crypto-to-fiat conversion powered by Loompay's Auto-Convert Engine.</li>
+</ul>
+<p><strong>Core Features:</strong></p>
+<ul>
+<li><strong>Auto-Convert Engine:</strong> Instantly swaps crypto to fiat at the best rate.</li>
+<li><strong>Spending Analytics:</strong> Tracks expenses, generates reports, and assigns a Web3 credit score.</li>
+<li><strong>Instant Notifications:</strong> Real-time updates for every transaction.</li>
+<li><strong>Multi-chain Support:</strong> Compatible with Ethereum, TON, Tron, BNB, and Solana ecosystems….</li>
+</ul>
+<hr />
+<h2 id="7-security-compliance"><strong>7. Security &amp; Compliance</strong><a class="headerlink" href="#7-security-compliance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AES-256 encryption and PCI-DSS Level 1 certified infrastructure.</li>
+<li>Card tokenization and 3D Secure authentication.</li>
+<li>On-chain risk engine prevents unauthorized transactions.</li>
+<li>Non-custodial mode available for advanced users.</li>
+</ul>
+<hr />
+<h2 id="8-key-highlights-of-loompay-secured-card"><strong>8. Key Highlights of Loompay Secured Card</strong><a class="headerlink" href="#8-key-highlights-of-loompay-secured-card" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Instant card experience:</strong> Pre-issued card on registration, ready to activate.</li>
+<li><strong>No credit score needed:</strong> Backed by crypto collateral.</li>
+<li><strong>0% FX fee, 1% cashback, and zero account maintenance fees.</strong></li>
+<li><strong>Integrated staking with flexible APY rewards.</strong></li>
+<li><strong>Multi-chain ecosystem ready for Web3 adoption.</strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
