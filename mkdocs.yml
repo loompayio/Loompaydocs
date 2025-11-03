@@ -4,7 +4,7 @@ site_url: https://<loompayio>.github.io/loompay-docs
 
 theme:
   name: material
-  logo: images/logo.png
+  logo: images/ava.png
   favicon: images/favicon.png
   features:
     - navigation.expand
