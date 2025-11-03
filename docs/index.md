@@ -3,6 +3,8 @@
 We're building a borderless financial bridge that connects crypto assets with the global fiat payment network, empowering individuals and businesses to spend, send, and manage digital wealth seamlessly in the real world.
 
 Create your LoomPay account, receive your virtual or physical card, fund it with stablecoins or crypto, and start spending globally—***fast, frictionless, and free from borders!***
+<img width="1500" height="500" alt="image" src="https://github.com/user-attachments/assets/bbe6b6bd-8b39-4af8-9ed5-22f187528f6e" />
+
 ## 🔗 Quick Links
 - [Introduction and Overview](product-intro.md)
 - [Competitive Advantages Analysis](competitive-advantages.md)
