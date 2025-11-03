@@ -8,11 +8,11 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    
+    # THÊM QUYỀN GHI (WRITE) ĐỂ CHO PHÉP PUSH LÊN BRANCH gh-pages
     permissions:
       contents: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
