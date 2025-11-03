@@ -1,6 +1,6 @@
 site_name: Loompay Docs
 site_description: The smarter way to spend your crypto on multi-chains
-site_url: https://loompayio.github.io/loompay-docs
+site_url: https://<loompayio>.github.io/loompay-docs
 
 theme:
   name: material
