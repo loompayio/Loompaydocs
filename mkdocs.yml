@@ -1,0 +1,46 @@
+site_name: Loompay Docs
+site_description: The smarter way to spend your crypto on multi-chains
+site_url: https://<loompay-docs>.github.io/loompay-docs
+
+theme:
+  name: material
+  logo: images/logo.png
+  favicon: images/favicon.png
+  features:
+    - navigation.expand
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: cyan
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+nav:
+  - Home: index.md
+  - Introduction: product-intro.md
+  - Competitive Advantages: competitive-advantages.md
+  - Wallet: wallet-functionality.md
+  - Architecture: technical-architecture.md
+  - Card System: secured-credit-card.md
+  - Staking & Liquidity: staking-liquidity.md
+  - Cashback Rewards: cashback-rewards.md
+  - Referral Program: referral-program.md
+  - Legal & Compliance: legal-compliance.md
+  - Resources & FAQ: resources-faq.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - def_list
+  - attr_list
+
+plugins:
+  - search
