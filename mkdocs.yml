@@ -5,7 +5,7 @@ site_url: https://<loompayio>.github.io/loompay-docs
 theme:
   name: material
   logo: ava.png
-  favicon: favicon.png
+  favicon: https://github.com/loompayio/Loompaydocs/blob/main/docs/Favicon.png
   features:
     - navigation.expand
     - navigation.tabs
